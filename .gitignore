@@ -1,0 +1,21 @@
+# Environment secrets — NEVER commit
+.env
+*.env.local
+
+# Go build artifacts
+backend/bin/
+backend/*.exe
+
+# Go test cache
+backend/vendor/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Node (if added later)
+node_modules/

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — OTP Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <span class="logo">🛒 OTP Shop</span>
+      <nav>
+        <a href="index.html" class="nav-link">Checkout</a>
+        <a href="register.html" class="nav-link active">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h1>Create Account</h1>
+      <p class="subtitle">Register to get a login code for faster checkout.</p>
+
+      <form id="registerForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+          <span class="field-error" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="firstName">First Name *</label>
+          <input type="text" id="firstName" name="firstName" placeholder="John" autocomplete="given-name" />
+          <span class="field-error" id="firstNameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name *</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Doe" autocomplete="family-name" />
+          <span class="field-error" id="lastNameError"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="registerBtn">
+          <span class="btn-text">Register</span>
+          <span class="spinner hidden"></span>
+        </button>
+      </form>
+
+      <!-- Success panel shown after registration -->
+      <div id="successPanel" class="success-panel hidden">
+        <div class="otp-display">
+          <p>🎉 Registration successful! Your login code is:</p>
+          <div class="otp-code" id="otpCode"></div>
+          <p class="otp-hint">Save this code — you'll need it to log in at checkout.</p>
+        </div>
+        <a href="index.html" class="btn btn-primary" style="margin-top:1rem;display:inline-block;">Go to Checkout</a>
+      </div>
+
+      <div id="errorMsg" class="error-msg hidden"></div>
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

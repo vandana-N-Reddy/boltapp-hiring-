@@ -1,0 +1,23 @@
+# fly.toml — Fly.io deployment config for the Go backend
+# Run: fly launch (first time) or fly deploy (subsequent)
+
+app = "otp-login-backend"
+primary_region = "sin"  # Singapore — change to nearest region
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = "256mb"
+  cpu_kind = "shared"
+  cpus = 1
